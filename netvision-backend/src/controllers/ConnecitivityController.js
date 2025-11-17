@@ -1,16 +1,16 @@
 const ConnectivityData = require('../models/ConnectivityData');
 const SavedSpot = require('../models/SavedSpot');
 const Tower = require('../models/Tower');
-const { calculateQualityScore, calculateEnhancedQualityScore, calculateWiFiQualityScore, generateWiFiMessage } = require('../Utils/qualityScore');
+const { calculateQualityScore, calculateEnhancedQualityScore, calculateWiFiQualityScore, generateWiFiMessage } = require('../utils/qualityScore');
 const {
   calculateDistance,
   calculateBearing,
   getCompassDirection,
   formatDistance,
   isValidCoordinate
-} = require('../Utils/geoUtils');
-const { generateHumanMessage, generateOfflineMessage } = require('../Utils/messageGenerator');
-const { compareWithTowerMetrics } = require('../Utils/towerComparison');
+} = require('../utils/geoUtils');
+const { generateHumanMessage, generateOfflineMessage } = require('../utils/messageGenerator');
+const { compareWithTowerMetrics } = require('../utils/towerComparison');
 const CONSTANTS = require('../config/constants');
 const axios = require('axios');
 

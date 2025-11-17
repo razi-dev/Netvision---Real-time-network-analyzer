@@ -1,4 +1,4 @@
-const { calculateDistance } = require('../Utils/geoUtils');
+const { calculateDistance } = require('../utils/geoUtils');
 const towerService = require('../services/towerService');
 
 /**

@@ -7,15 +7,15 @@ const WebSocket = require('ws');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const ConnectivityData = require('../models/ConnectivityData');
-const { calculateQualityScore } = require('../Utils/qualityScore');
+const { calculateQualityScore } = require('../utils/qualityScore');
 const {
   calculateDistance,
   calculateBearing,
   getCompassDirection,
   formatDistance,
   isValidCoordinate
-} = require('../Utils/geoUtils');
-const { generateHumanMessage } = require('../Utils/messageGenerator');
+} = require('../utils/geoUtils');
+const { generateHumanMessage } = require('../utils/messageGenerator');
 const CONSTANTS = require('../config/constants');
 
 let wss = null;

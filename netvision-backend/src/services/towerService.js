@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { calculateDistance } = require('../Utils/geoUtils');
+const { calculateDistance } = require('../utils/geoUtils');
 
 /**
  * Tower Service - Handles real cell tower data

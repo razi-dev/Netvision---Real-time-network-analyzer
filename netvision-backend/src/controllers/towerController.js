@@ -1,5 +1,5 @@
 const Tower = require('../models/Tower');
-const { calculateDistance, isValidCoordinate } = require('../Utils/geoUtils');
+const { calculateDistance, isValidCoordinate } = require('../utils/geoUtils');
 const { compareWithTowerMetrics } = require('../utils/towerComparison');
 const CONSTANTS = require('../config/constants');
 
