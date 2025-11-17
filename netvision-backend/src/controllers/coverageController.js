@@ -31,7 +31,16 @@ exports.getCoverageData = async (req, res, next) => {
         const [minLng, minLat, maxLng, maxLat] = bounds.split(',').map(Number);
         query.location = {
           $geoWithin: {
-            $box: [[minLng, minLat], [maxLng, maxLat]]
+            $geometry: {
+              type: 'Polygon',
+              coordinates: [[
+                [minLng, minLat],
+                [maxLng, minLat],
+                [maxLng, maxLat],
+                [minLng, maxLat],
+                [minLng, minLat]
+              ]]
+            }
           }
         };
       }
@@ -83,9 +92,11 @@ exports.getCoverageData = async (req, res, next) => {
 
   } catch (error) {
     console.error('Error fetching coverage data:', error);
+    // Return error details for debugging
     res.status(500).json({
       success: false,
-      message: 'Failed to fetch coverage data',
+      message: 'Failed to fetch coverage data: ' + (error.message || 'Unknown error'),
+      error: process.env.NODE_ENV === 'development' ? error.toString() : undefined,
       data: []
     });
   }
